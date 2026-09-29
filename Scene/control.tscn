@@ -1,0 +1,163 @@
+[gd_scene format=3 uid="uid://83nccq3v5vtj"]
+
+[ext_resource type="Script" uid="uid://mgaqcbb8rk4a" path="res://Scripts/control.gd" id="1_4k4du"]
+[ext_resource type="Texture2D" uid="uid://dih4afxec4iqf" path="res://c49c691a-witch-s-potion-room-in-detailed-pixel-art-style-compressed.jpg" id="2_kag2x"]
+[ext_resource type="Texture2D" uid="uid://b0ikx00s377dx" path="res://cauldron.png" id="3_s61rb"]
+[ext_resource type="Texture2D" uid="uid://ck3f1joxxm7s0" path="res://calicoKitty_curiousIdleBreaker.png" id="4_yx3qh"]
+[ext_resource type="PackedScene" uid="uid://dmw0i63iwq3qm" path="res://Scene/generator.tscn" id="5_8ku2i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ee4bf"]
+atlas = ExtResource("4_yx3qh")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kbped"]
+atlas = ExtResource("4_yx3qh")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fj5cn"]
+atlas = ExtResource("4_yx3qh")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iy58a"]
+atlas = ExtResource("4_yx3qh")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6a6wx"]
+atlas = ExtResource("4_yx3qh")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sky72"]
+atlas = ExtResource("4_yx3qh")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ytqx"]
+atlas = ExtResource("4_yx3qh")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxugv"]
+atlas = ExtResource("4_yx3qh")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eh0v1"]
+atlas = ExtResource("4_yx3qh")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_am1vj"]
+atlas = ExtResource("4_yx3qh")
+region = Rect2(256, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v5gy4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ee4bf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kbped")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fj5cn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iy58a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6a6wx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sky72")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ytqx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pxugv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eh0v1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_am1vj")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="Control" type="Control" unique_id=1248047175]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4k4du")
+
+[node name="BG" type="Sprite2D" parent="." unique_id=1983954013]
+modulate = Color(0.49803922, 0.58431375, 1, 1)
+position = Vector2(547.99994, 185)
+scale = Vector2(1.1777343, 1)
+texture = ExtResource("2_kag2x")
+
+[node name="Clicker Button" type="Button" parent="." unique_id=1220056129]
+layout_mode = 0
+offset_left = 727.0
+offset_top = 424.0
+offset_right = 885.0
+offset_bottom = 578.0
+icon = ExtResource("3_s61rb")
+
+[node name="Upgrade Button" type="Button" parent="Clicker Button" unique_id=343391141]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 160.0
+offset_right = 146.0
+offset_bottom = 210.0
+theme_override_font_sizes/font_size = 20
+text = "Upgrade"
+
+[node name="Coinlabel" type="Label" parent="." unique_id=2117050667]
+layout_mode = 0
+offset_left = 702.0
+offset_top = 122.0
+offset_right = 806.0
+offset_bottom = 180.0
+theme_override_font_sizes/font_size = 30
+text = "Coin: "
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1825657976]
+modulate = Color(0.9098039, 0.80784315, 1, 1)
+position = Vector2(206, 405)
+scale = Vector2(6.39693, 8.043033)
+sprite_frames = SubResource("SpriteFrames_v5gy4")
+frame_progress = 0.5211853
+
+[node name="Generator" parent="." unique_id=1106138332 node_paths=PackedStringArray("gamemanager") instance=ExtResource("5_8ku2i")]
+layout_mode = 1
+offset_left = 509.0
+offset_top = 203.0
+offset_right = 509.0
+offset_bottom = 203.0
+gamemanager = NodePath("..")
+
+[node name="Generator 2" parent="." unique_id=1421032688 node_paths=PackedStringArray("gamemanager") instance=ExtResource("5_8ku2i")]
+layout_mode = 0
+offset_left = 831.0
+offset_top = 203.0
+offset_right = 831.0
+offset_bottom = 203.0
+gamemanager = NodePath("..")
+cost = 10000
+
+[node name="Label" type="Label" parent="." unique_id=364795339]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 47.0
+offset_right = 614.0
+offset_bottom = 116.0
+theme_override_colors/font_color = Color(0.58431375, 0.54901963, 1, 1)
+theme_override_font_sizes/font_size = 50
+text = "Witch Cat Money Maker"
+
+[connection signal="button_down" from="Clicker Button" to="." method="_on_clicker_button_button_down"]
+[connection signal="pressed" from="Clicker Button/Upgrade Button" to="." method="_on_upgrade_button_pressed"]

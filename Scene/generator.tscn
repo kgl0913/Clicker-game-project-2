@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dmw0i63iwq3qm"]
+
+[ext_resource type="Script" uid="uid://crqgrpwvia5vj" path="res://Scripts/generator.gd" id="1_yybav"]
+[ext_resource type="Texture2D" uid="uid://1a0ugnowxls5" path="res://potion.png" id="2_r36sx"]
+
+[node name="Generator" type="Control" unique_id=1106138332]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_yybav")
+
+[node name="Generator Button" type="Button" parent="." unique_id=753503451]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 13.0
+offset_right = 177.0
+offset_bottom = 151.0
+icon = ExtResource("2_r36sx")
+
+[node name="Generator timer" type="Timer" parent="." unique_id=165967717]
+wait_time = 1.5
+
+[node name="Label" type="Label" parent="." unique_id=1068195296]
+layout_mode = 0
+offset_top = 151.0
+offset_right = 301.0
+offset_bottom = 193.0
+theme_override_font_sizes/font_size = 30
+text = "Generator cost: 2000"
+
+[connection signal="button_down" from="Generator Button" to="." method="_on_generator_button_button_down"]
+[connection signal="timeout" from="Generator timer" to="." method="_on_generator_timer_timeout"]
