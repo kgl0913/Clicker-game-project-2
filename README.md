@@ -17,3 +17,5 @@ UI and Buttons: Fantasy-style buttons, ingredient counters, currency icons, upgr
 Animations and Effects: Bubbling potion effects, glowing particles, magical circles, smoke, sparkles, and potion-completion effects.
 
 Audio: Rivetting background music, cat meows, potion bubbling, clicking sounds, magical chimes, and coin collection sounds.
+
+https://kglexe.itch.io/witch-cat-moneymaker
